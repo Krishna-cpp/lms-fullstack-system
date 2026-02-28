@@ -1,63 +1,67 @@
 # Learning Management System (LMS)
 
-A full-stack Learning Management System built using Angular, Node.js, and MySQL.
+A full-stack Learning Management System built using Angular, Node.js, Express, and MySQL (InnoDB).
+
+This system models real-world academic workflows including course publishing, student enrollment, quizzes, assignments, certificate issuance, and progress tracking.
 
 ---
 
-## Tech Stack
+## 🏗 System Architecture
 
-- Frontend: Angular
-- Backend: Node.js + Express
-- Database: MySQL (InnoDB)
+Frontend: Angular (Standalone Components)  
+Backend: Node.js + Express (REST API)  
+Database: MySQL (InnoDB engine, normalized relational schema)
+
+The system enforces strict referential integrity using foreign keys and ON DELETE CASCADE policies.
 
 ---
 
-## Database Design
+## 📊 Database Design
 
-The database follows Third Normal Form (3NF) and enforces referential integrity.
+The database is normalized to Third Normal Form (3NF).
 
-### Core Tables
+### Core Entities
 
-- users
-- courses
-- categories
-- lessons
-- enrollments
-- quizzes
-- quiz_questions
-- assignments
-- submissions
-- certificates
-- login_history
+- Users (students, instructors, admins)
+- Categories
+- Courses
+- Lessons
+- Enrollments (many-to-many bridge)
+- Assignments
+- Submissions
+- Quizzes
+- Quiz Questions
+- Certificates
+- Login History
 
-### Key Features
+### Design Features
 
-- Foreign key constraints with ON DELETE CASCADE
-- Composite UNIQUE constraints for many-to-many relationships
-- Index optimization for read-heavy workload
+- Composite UNIQUE constraints for:
+  - enrollments (student_id, course_id)
+  - submissions (assignment_id, student_id)
+  - certificates (student_id, course_id)
+- Foreign key constraints with cascading deletes
+- Indexing strategy for JOIN-heavy queries
+- ENUM usage for role and course level
+- Audit tracking (created_at, updated_at)
 - Transaction-safe enrollment workflow
-- Analytical JOIN queries
 
 ---
 
-## How To Run
+## ⚡ Performance Awareness
 
-1. Import database schema:
-   Run `schema.sql`
-   Then run `indexes.sql`
-
-2. Start backend:
-   cd backend
-   npm install
-   npm run dev
-
-3. Start frontend:
-   cd frontend
-   npm install
-   ng serve
+- Indexes created on foreign key columns
+- Composite indexes added for JOIN optimization
+- Query plan inspected using EXPLAIN
+- InnoDB used for row-level locking and transactional integrity
 
 ---
 
-## Author
+## 🔄 Example Analytical Query
 
-Krishna Kumar
+```sql
+SELECT u.name, c.title, e.progress
+FROM enrollments e
+JOIN users u ON e.student_id = u.id
+JOIN courses c ON e.course_id = c.id
+WHERE e.completed = 1;
