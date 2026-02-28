@@ -1,0 +1,16 @@
+[2026-02-19T09:18:00.595Z] Login attempt: eleanor@lms.dev - SUCCESS - IP: ::1
+[2026-02-19T09:18:01.376Z] Login attempt: eleanor@lms.dev - FAILURE - IP: ::1
+[2026-02-19T09:18:01.792Z] Login attempt: fake@user.com - FAILURE - IP: ::1
+[2026-02-19T09:23:05.698Z] Login attempt: eleanor@lms.dev - SUCCESS - IP: ::1
+[2026-02-19T09:23:35.792Z] Login attempt: eleanor@lms.dev - SUCCESS - IP: ::1
+[2026-02-19T09:24:45.060Z] Login attempt: eleanor@lms.dev - SUCCESS - IP: ::1
+[2026-02-19T09:25:59.792Z] Login attempt: eleanor@lms.dev - SUCCESS - IP: ::1
+[2026-02-19T10:10:23.331Z] Login attempt: sreshant@gmail.com - FAILURE - IP: ::1
+[2026-02-19T10:11:05.495Z] Login attempt: sreshant@gmail.com - FAILURE - IP: ::1
+[2026-02-19T10:11:21.613Z] Login attempt: mithung@gmail.com - SUCCESS - IP: ::1
+[2026-02-21T05:58:33.260Z] Login attempt: mithung@gmail.com - SUCCESS - IP: ::1
+[2026-02-21T06:07:53.672Z] Login attempt: eleanor@lms.dev - SUCCESS - IP: ::1
+[2026-02-24T15:58:41.998Z] Login attempt: kri@gmail.com - SUCCESS - IP: ::1
+[2026-02-24T15:59:02.890Z] Login attempt: nav@gmail.com - SUCCESS - IP: ::1
+[2026-02-25T03:22:29.496Z] Login attempt: kri@gmail.com - SUCCESS - IP: ::1
+[2026-02-25T08:35:32.951Z] Login attempt: kri@gmail.com - SUCCESS - IP: ::1
